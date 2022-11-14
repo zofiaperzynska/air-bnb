@@ -13,7 +13,11 @@ import "react-date-range/dist/theme/default.css";
 import { DateRangePicker, RangeKeyDict } from "react-date-range";
 import { useRouter } from "next/router";
 
-const Header = () => {
+interface HeaderProps {
+  placeholder?: string;
+}
+
+const Header = ({ placeholder }: HeaderProps) => {
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState<Date | undefined>(new Date());
   const [endDate, setEndDate] = useState<Date | undefined>(new Date());
@@ -67,7 +71,7 @@ const Header = () => {
           onChange={(event) => setSearchInput(event.target.value)}
           className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400'
           type='text'
-          placeholder='Start your search'
+          placeholder={placeholder || "Start your search"}
         />
         <MagnifyingGlassIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2' />
       </div>
