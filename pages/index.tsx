@@ -81,12 +81,12 @@ export default Home;
 export const getStaticProps: GetStaticProps = async () => {
   // https://jsonkeeper.com/b/4G1G
   const exploreData = await fetch(
-    "https://api.jsonbin.io/v3/qs/6372339665b57a31e6b730dd"
+    "https://api.jsonbin.io/v3/qs/6373c6a30e6a79321e4a9be5"
   ).then((res) => res.json());
 
   // https://jsonkeeper.com/b/VHHT
   const cardData = await fetch(
-    "https://api.jsonbin.io/v3/qs/637233c42b3499323bff7099"
+    "https://api.jsonbin.io/v3/qs/6373c6d165b57a31e6b875d1"
   ).then((res) => res.json());
 
   return {

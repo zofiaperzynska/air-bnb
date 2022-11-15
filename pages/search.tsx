@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import { format } from "date-fns";
 import { GetServerSideProps, NextPage } from "next";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 export interface SearchResults {
   img: string;
@@ -67,6 +68,9 @@ const Search: NextPage<SearchProps> = (props) => {
               />
             ))}
           </div>
+        </section>
+        <section className='hidden xl:inline-flex xl:min-w-[600px]'>
+          <Map searchResults={props.searchResults || []} />
         </section>
       </main>
 
